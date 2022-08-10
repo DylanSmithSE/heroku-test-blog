@@ -33,7 +33,7 @@ $conn->close();
                 <h3><?php echo $post['title'] ?></h3>
                 <small>Created on <?php echo $post['date']; ?> by <?php echo $post['author']; ?></small>
                 <p><?php echo $post['body']; ?></p>
-                <a class="btn  btn-info" href="post.php?id=<?php echo $post['id']; ?>">Read More</a>
+                <a class="btn  btn-info" href="./post.php?id=<?php echo $post['id']; ?>">Read More</a>
             </div>
         <?php endforeach; ?>
     </div>
