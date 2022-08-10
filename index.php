@@ -23,6 +23,7 @@ $conn->close();
 ?>
 
 <?php include('./inc/header.php') ?>
+<?php include('inc/navbar.php') ?>
 
 <body>
     <div class="container">
