@@ -9,7 +9,11 @@
 
 <body>
     <h1>Test Blog</h1>
-    <p>Deployment seems to be working. Lets see if we can connect to DB</p>
+    <p>Deployment seems to be working. Lets see if we access config vars:</p>
+    <?php
+    $config_var = getenv('TEST_VAR');
+    echo $config_var;
+    ?>
 </body>
 
 </html>
