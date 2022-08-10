@@ -16,5 +16,4 @@ if (mysqli_connect_errno()) {
     //connection has failed
     echo 'Failed to connect to MySQL ' . mysqli_connect_errno();
 } else {
-    echo $cleardb_db;
 }
