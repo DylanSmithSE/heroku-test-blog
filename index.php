@@ -1,4 +1,5 @@
 <?php
+require('./config/config.php');
 require('./db.php');
 
 //Create our query
@@ -20,20 +21,12 @@ $result->free();
 //close connection
 $conn->close();
 ?>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Blog</title>
-    <link rel="stylesheet" href="./bootstrap.min.css">
-</head>
+<?php include('./inc/header.php') ?>
 
 <body>
     <div class="container">
         <h1>Posts</h1>
-
         <?php foreach ($posts as $post) : ?>
             <div style="margin: 1em 0; padding: 0.5em 1em; background-color: #dcdfe3;">
                 <h3><?php echo $post['title'] ?></h3>
@@ -44,5 +37,4 @@ $conn->close();
         <?php endforeach; ?>
     </div>
 </body>
-
-</html>
+<?php include('./inc/footer.php') ?>
