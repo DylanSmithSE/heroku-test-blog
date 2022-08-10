@@ -1,6 +1,6 @@
 <?php
 require('./config/config.php');
-require('./db.php');
+require('./config/db.php');
 
 //check for submit
 if (isset($_POST['submit'])) {
