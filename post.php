@@ -53,5 +53,4 @@ $conn->close();
         <a href="<?php echo ROOT_URL; ?>editpost.php?id=<?php echo $post['id']; ?>" class="btn btn-secondary">Edit</a>
 
     </div>
-</body>
-<?php include('inc/footer.php') ?>
+    <?php include('inc/footer.php') ?>
