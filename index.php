@@ -1,3 +1,9 @@
+<?php
+require('./db.php');
+
+//close connection
+$conn->close();
+?>
 <html lang="en">
 
 <head>
@@ -9,11 +15,7 @@
 
 <body>
     <h1>Test Blog</h1>
-    <p>Deployment seems to be working. Lets see if we access config vars:</p>
-    <?php
-    $config_var = getenv('TEST_VAR');
-    echo $config_var;
-    ?>
+    <p>Deployment seems to be working. Lets see if we connect to DB:</p>
 </body>
 
 </html>
