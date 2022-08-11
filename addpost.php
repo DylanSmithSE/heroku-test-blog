@@ -2,6 +2,12 @@
 require('./config/config.php');
 require('./config/db.php');
 
+//check the number of posts, want a limit of 10
+//if there are 10, disable the submit button and display message
+$query_count = "SELECT * FROM posts ";
+$result = $conn->query($query_count);
+$num_of_posts = $result->num_rows;
+
 //check for submit
 if (isset($_POST['submit'])) {
     //Get form data
@@ -25,6 +31,12 @@ if (isset($_POST['submit'])) {
 <body>
     <div class="container">
         <h1>Add Post</h1>
+        <?php if ($num_of_posts > 9) : ?>
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                You can only have 10 posts saved at once. Consider deleting older posts in order to make new ones.
+            </div>
+        <?php endif; ?>
         <form method="POST" action="<?php $_SERVER['PHP_SELF']; ?>">
             <div class="form-group">
                 <label>Title</label>
@@ -38,7 +50,9 @@ if (isset($_POST['submit'])) {
                 <label>Body</label>
                 <textarea name="body" class="form-control"></textarea>
             </div>
-            <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+            <input type="submit" name="submit" value="Submit" class="btn btn-primary <?php if ($num_of_posts > 9) {
+                                                                                            echo "disabled";
+                                                                                        } ?>">
         </form>
 
     </div>
